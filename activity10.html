@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //creamos array
+        const array = [22, 23, 21, "hola", "adeu", true, false, false, true, "Vicent", 2003];
+        //llamamos a la funcion , el calback devolvera true si tiene "hola"
+        let array2 = filtro(array, x=> x>=23);
+        console.log(array2);
+
+        //pedimos 2 parametros
+        function filtro(array, callback){
+            //creamos la array que devolveremos
+            let array2 = new Array();
+            //un contador iniciado a 0 sera utilizado para las posiciones del nuevo array
+            let cont = 0;
+            //mientras el array pasado por parametro tenga posiciones...
+            for (let i = 0 ; i< array.length; i++){
+                //si el calback devuelve true en esa posicion
+                if(callback(array[i])){
+                    //ponemos en la posicion cont del array2 el valor del array de ese momento
+                    array2[cont]=array[i];
+                    //sumamos el contador
+                    cont++;
+                }
+            }
+            //devolvemos el array creado
+            return array2;
+        }
+        
+    </script>
+    
+</body>
+</html>

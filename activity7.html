@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //pedimos el valor de la variable
+        let palindrome = prompt("Dime un palidrome");
+
+        function palidromeSioNo(x){
+            //transformamos x en minusculas
+            x=x.toLowerCase();
+            //remplazamos los accentos y los dieresis por su letra y quitamos los espacios
+            x = x.replace(/[^-A-Za-z]+/g, '');
+            //creamos una variable con el valor de x invertido 
+            let invert = x.split('').reverse().join('');
+            // si es igual devolveremos true sino false
+            if(invert == x){
+                return true;
+            }else{
+                return false;
+            }            
+        }
+        //mostramos el resultado de la funcion
+        console.log(palidromeSioNo(palindrome));
+
+    </script>
+    
+</body>
+</html>

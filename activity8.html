@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //funcion anagram con 2 parametros
+        function anagram(text1 , text2){
+            //si el tamaño es igual comprobamos sino, salimos devolviendo false
+            if(text1.legth == text2.legth){
+                //el texto 1 lo transformamos en minusculas y en array
+                text1 = text1.toLowerCase().split("");
+                //lo ordenamos y lo devolvemos a un String
+                text1 = text1.sort().join("");
+                //lo mismo
+                text2 = text2.toLowerCase().split("");
+                text2 = text2.sort().join("");
+                //si los textos son iguales devolvemos true
+                if(text1==text2){
+                    return true;
+                }else{
+                    return false;
+                }
+
+            }else{
+                return false;
+            }
+        }
+        //pedimos las variables
+        let p1 = prompt("Dime la primera palabra");
+        let p2 = prompt("Dime la segunda palabra");
+        //mostramos el resultado
+        console.log(anagram(p1,p2));
+
+    </script>
+    
+</body>
+</html>

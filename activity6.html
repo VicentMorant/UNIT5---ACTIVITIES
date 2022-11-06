@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //pedimos el valor de la variable
+        const fivo = prompt("Dime el número que quieres hacerle el fivonachi: ");
+        
+        function fivonacci(x){
+            //si x es mayor que 1
+            if(x>1){             
+                //devolvemos la suma de fivonacci(x-1) y fivonacci(x-2)               
+                return(fivonacci(x-1) + fivonacci(x-2)); 
+            }else {        
+                //si es menor o igual devolveremos su valor
+                return x;
+            }
+        }
+        //mostramos el valor de ese fibonacci
+        document.write(fivonacci(fivo));
+
+    </script>
+
+</body>
+</html>
+

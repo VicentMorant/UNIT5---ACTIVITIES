@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const setWords=new Set();
+        var arrayWords=[];
+        //pide una palabra
+        var word = prompt("Escribe una palabra o dejala vacia para terminar")
+        //si la palabra esta vacia o cancela sale del bucle
+        while(word != null && word != ""){
+            //añade al set las palabras que escribe el usuario
+            setWords.add(word);
+            word = prompt("Escribe una palabra o dejala vacia para terminar")
+        }
+        //añade a un array el sett
+        arrayWords=[...setWords];
+        //ordena el array de Z - A
+        arrayWords.sort((a,b)=>(-a.localeCompare(b,"es")));
+        //muestra cada posicion del array ya ordenada
+        arrayWords.forEach(function(w){
+            document.write(`<p>${w}</p>`);
+        })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 100%;
+        }
+        td{
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //si no pasan nada por parametro ponemos valor predefinidos
+        function tabla(filas=10, columnas=4, color="black"){
+            //creamos tabla
+            document.write(`<table border="3px solid" bordercolor="${color}">`);
+            for(let i = 0; i < filas; i++){
+                //creamos tantas filas como valga el valor filas
+                document.write("<tr>");
+                for(let j = 0; j< columnas; j++ ){
+                    //dentro de cada fila creamos tantas columnas como valor tenga la variable
+                    document.write("<td>A</td>");
+                }
+                //cada vez que se salga del bucle de columnas cerramos la fila
+                document.write("</tr>");
+            }
+            //cerramos tabla
+            document.write("</table>");
+        }        
+            
+        tabla(10, 4, "black");
+        
+        document.write("<br>");
+        
+        tabla(20, 10 , "black");
+        
+        document.write("<br>");
+
+        for(let i =0; i<20; i++){
+            tabla(5,4,"green");
+        }
+    </script>
+    
+</body>
+</html>

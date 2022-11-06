@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function mapa(array){
+            //creamos un mapa
+            const palabras = new Map();
+            //mientras el array se pueda recorrer
+            for(let i = 0; i<array.length; i++){
+                //si el mapa contiene como clave el valor de array[i]
+                if(palabras.has(array[i])){                    
+                    //creamos el valor que sera el que tiene mas 1
+                    let valor = palabras.get(array[i])+1;
+                    //machacamos el valor antiguo
+                    palabras.set(array[i], valor);                                        
+                }else{                    
+                    //sino contiene esa clave lo metemos en el mapa
+                    palabras.set(array[i] , 1);                                        
+
+                }
+            }
+            //devolvemos mapa
+            return palabras;
+        }
+        let i=0;
+        let arrayPalabras = new Array;
+        let palabra = prompt("Dime una palabra : ");
+        while(palabra != "" && palabra != null){            
+            arrayPalabras[i] = palabra            
+            i++;
+            palabra = prompt("Dime una palabra : ");
+        }
+        console.log(mapa(arrayPalabras));
+
+    </script>
+
+</body>
+</html>

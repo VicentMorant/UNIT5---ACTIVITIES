@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function primo(x){
+            //truncamos el numero pasado por parametro dividido por 2
+            let x1 = Math.trunc(x/2);
+            //si es menor o igual a 1 o igual a 4
+            if(x<=1 || x == 4){
+                return false;
+            }
+            //mientras i sea menor que el numero truncado
+            for(let i = 2; i< x1; i++){
+                //si la operacion devuelve 0
+                if(x % i == 0) {
+                    return false;                    
+                }
+            }
+            //si sale del bucle y no ha devuelto false quiere decir que es true
+            return true;
+            
+        }
+
+        for(let i = 1; i<=1000; i++){
+            document.write(i + " primo? " +primo(i)+ "<br>");
+        }
+    </script>
+    
+</body>
+</html>
